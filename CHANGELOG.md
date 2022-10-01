@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [0.2.1] - 2022-10-01
+### Added
+- Basic documentation at README.md file
+### Changed
+### Deprecated
+### Removed
+### Fixed
+- Travis: psalm
+### Security
+
+
+
 ## [0.2.0] - 2022-10-01
 ### Added
 - PhpUnit tests
@@ -38,5 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 [Unreleased]: https://github.com/masfernandez/value-object/compare/master...develop
+[0.2.1]: https://github.com/masfernandez/value-object/compare/0.2.1...0.2.0
 [0.2.0]: https://github.com/masfernandez/value-object/compare/0.2.0...0.1.0
 [0.1.0]: https://github.com/masfernandez/value-object/releases/tag/0.1.0
