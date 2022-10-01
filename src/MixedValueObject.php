@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Masfernandez\ValueObject;
 
 use Symfony\Component\Validator\Constraint;

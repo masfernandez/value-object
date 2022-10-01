@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<psalm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="https://getpsalm.org/schema/config"
+       xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+       errorLevel="4"
+>
+    <!-- @todo errorLevel="1" -->
+
+    <projectFiles>
+        <directory name="src/"/>
+        <ignoreFiles>
+            <directory name="build/"/>
+            <directory name="tests/"/>
+            <directory name="vendor/"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <TooManyArguments>
+            <errorLevel type="suppress">
+                <file name="src/CoordinateValueObject.php"/>
+            </errorLevel>
+        </TooManyArguments>
+    </issueHandlers>
+</psalm>

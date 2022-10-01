@@ -14,6 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [0.2.0] - 2022-10-01
+### Added
+- PhpUnit tests
+- Quality tools
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+
 
 ## [0.1.0] - 2022-09-25
 ### Added
@@ -27,4 +38,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 [Unreleased]: https://github.com/masfernandez/value-object/compare/master...develop
-[0.0.1]: https://github.com/masfernandez/value-object/releases/tag/v0.1.0
+[0.2.0]: https://github.com/masfernandez/value-object/compare/0.2.0...0.1.0
+[0.1.0]: https://github.com/masfernandez/value-object/releases/tag/0.1.0
