@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Masfernandez\ValueObject;
 
+use Exception;
+use Masfernandez\ValueObject\Exception\ValueObjectException;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints;
@@ -16,7 +18,14 @@ abstract class NullableUuidValueObject extends ValueObject
         ?string $value,
     ) {
         parent::__construct($value);
-        $this->value = ($value !== null) ? new Uuid($value) : null;
+        try {
+            $this->value = ($value !== null) ? new Uuid($value) : null;
+        } catch (Exception $exception) {
+            throw new ValueObjectException(
+                message:  $exception->getMessage(),
+                previous: $exception,
+            );
+        }
     }
 
     /**
@@ -38,11 +47,18 @@ abstract class NullableUuidValueObject extends ValueObject
 
     public function value(): ?string
     {
-        return $this->value;
+        return $this->value?->toRfc4122();
     }
 
+    /**
+     * @throws ValueObjectException
+     */
     public function __toString(): string
     {
-        return $this->value === null ? $this->value->toRfc4122() : 'null';
+        if ($this->value === null) {
+            throw new ValueObjectException('Null value');
+        }
+
+        return $this->value->toRfc4122();
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Masfernandez\ValueObject;
 
+use Masfernandez\ValueObject\Exception\ValueObjectException;
 use Stringable;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Validation;
@@ -35,7 +36,7 @@ abstract class ValueObject implements Stringable
         $violations = Validation::createValidator()->validate($value, static::setConstraints());
         if (count($violations) > 0) {
             $detail = $violations[0]->getMessage();
-            throw new ValueObjectException($detail . " Value: $value. Object: " . self::class);
+            throw new ValueObjectException((string)$detail);
         }
     }
 

@@ -21,7 +21,13 @@
         "symfony/validator": "^5.3|^6.1"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "php-coveralls/php-coveralls": "^2.5",
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^0.14.5",
+        "roave/security-advisories": "dev-latest",
+        "squizlabs/php_codesniffer": "*",
+        "vimeo/psalm": "^4.27"
     },
     "config": {
         "optimize-autoloader": true,
@@ -33,6 +39,11 @@
     "autoload": {
         "psr-4": {
             "Masfernandez\\ValueObject\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Masfernandez\\ValueObject\\Tests\\": "tests/"
         }
     }
 }

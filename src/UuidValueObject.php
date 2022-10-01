@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Masfernandez\ValueObject;
 
+use Exception;
+use Masfernandez\ValueObject\Exception\ValueObjectException;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints;
@@ -16,7 +18,14 @@ abstract class UuidValueObject extends ValueObject
         string $value,
     ) {
         parent::__construct($value);
-        $this->value = new Uuid($value);
+        try {
+            $this->value = new Uuid($value);
+        } catch (Exception $exception) {
+            throw new ValueObjectException(
+                message:  $exception->getMessage(),
+                previous: $exception,
+            );
+        }
     }
 
     /**

@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Masfernandez\ValueObject;
+namespace Masfernandez\ValueObject\Exception;
 
 use Exception;
 
 class ValueObjectException extends Exception
 {
-
 }

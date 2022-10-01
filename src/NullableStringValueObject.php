@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Masfernandez\ValueObject;
 
+use Masfernandez\ValueObject\Exception\ValueObjectException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints;
 
@@ -39,8 +40,15 @@ abstract class NullableStringValueObject extends ValueObject
         return $this->value;
     }
 
+    /**
+     * @throws ValueObjectException
+     */
     public function __toString(): string
     {
-        return $this->value ?? 'null';
+        if ($this->value === null) {
+            throw new ValueObjectException('Null value');
+        }
+
+        return $this->value;
     }
 }

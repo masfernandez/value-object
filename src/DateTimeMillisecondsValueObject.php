@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints;
 
 abstract class DateTimeMillisecondsValueObject extends ValueObject
 {
-    private const FORMAT = 'Y-m-d\TH:i:s.uP';
+    final public const FORMAT = 'Y-m-d\TH:i:s.uP';
 
     private readonly DateTimeInterface $value;
 
